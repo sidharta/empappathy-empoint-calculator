@@ -1,0 +1,42 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'war'
+apply plugin: 'appengine'
+
+group = 'com.empappathy'
+version = '1.0-SNAPSHOT'
+archivesBaseName = 'empappathy-empoints-calculator'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    maven { url 'http://oss.sonatype.org/content/repositories/snapshots' }
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.google.appengine:gradle-appengine-plugin:1.9.49'
+    }
+}
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+dependencies {
+    appengineSdk 'com.google.appengine:appengine-java-sdk:1.9.49'
+    compile 'com.google.appengine:appengine-api-1.0-sdk:1.9.49'
+    compile 'javax.servlet:servlet-api:2.5'
+    testCompile 'com.google.appengine:appengine-testing:1.9.49'
+    testCompile 'com.google.appengine:appengine-api-stubs:1.9.49'
+    compile 'com.google.firebase:firebase-server-sdk:3.0.3'
+}
+
+appengine {
+    downloadSdk = true
+    httpPort = 8088
+    jvmFlags = ['-Xdebug', '-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005']
+}

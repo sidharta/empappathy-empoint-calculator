@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cronentries>
+    <cron>
+        <url>/calculate-image</url>
+        <schedule>every 2 mins</schedule>
+        <description>Image calculator service</description>
+    </cron>
+    <cron>
+        <url>/calculate-comment</url>
+        <schedule>every 3 mins</schedule>
+        <description>Comment calculator service</description>
+    </cron>
+</cronentries>
