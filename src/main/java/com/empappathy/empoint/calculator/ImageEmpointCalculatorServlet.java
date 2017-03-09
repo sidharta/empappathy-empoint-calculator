@@ -90,11 +90,13 @@ public class ImageEmpointCalculatorServlet extends HttpServlet {
         try {
             FirebaseApp.getInstance();
         } catch (Exception error) {
+            log.severe(error.getMessage());
         }
 
         try {
             FirebaseApp.initializeApp(options);
         } catch (Exception error) {
+            log.severe(error.getMessage());
         }
     }
 
