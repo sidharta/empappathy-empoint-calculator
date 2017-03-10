@@ -92,10 +92,10 @@ public class EmpointCalculatorService {
 
         if (comm.score != null) {
             // really bad comment or really good comment
-            if (comm.score < -0.5 || comm.score > 0.5) {
-                empoints += comm.score * 150;
+            if (comm.score < -50 || comm.score > 50) {
+                empoints += comm.score * 1.5;
             } else { // normal or bad comment
-                empoints += comm.score * 100;
+                empoints += comm.score;
             }
         }
 
